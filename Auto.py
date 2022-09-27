@@ -31,10 +31,12 @@ while opc != 3:
                 elat = radians(float(input("Latitud del segundo lugar: ")))
                 elon = radians(float(input("longitud del segundo lugar:")))
                 dist = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
-                print("La distancia entre: " ,lugar1, "y: " ,lugar2, "es" , dist, "Km")
+                r = round(dist, 2)
+                print("La distancia entre: " ,lugar1, "y" ,lugar2, "es" , r, "Km")
                 precio = int(input("¿Valor del kilometro por hora? en pesos chilenos: "))
                 pago=dist*precio
-                print("El pago es: ", pago, "pesos")
+                p = round(pago, 2)
+                print("El pago es: ", p, "pesos")
             elif opc2 == 2:
                 import datetime
                 print(datetime.datetime.now())
@@ -61,7 +63,7 @@ while opc != 3:
                     print("El angulo de giro debe estar entre 0 y 360")
             elif opc2 == 7:
                 if dist != 0 and pago !=0:
-                    print("Nombre: ", nombre, "\n Rut: ", rut, "\n Modelo: ", modelo, "\n Patente: ", patente,"\n Comenzo en: " ,lugar1, "\n Termino en: " ,lugar2, "\n Distancia Recorrida: ", dist, "\n Velocidad: ", velocidad, "\n Pago: ", pago , "\n El vehiculo ha girado : ", f, "grados")
+                    print("Nombre: ", nombre, "\n Rut: ", rut, "\n Modelo: ", modelo, "\n Patente: ", patente,"\n Comenzo en: " ,lugar1, "\n Termino en: " ,lugar2, "\n Distancia Recorrida: ", r,"km" "\n Velocidad: ", velocidad,"km/h" "\n Pago: ", p , "\n El vehiculo ha girado : " ,f, "grados")
                     print(datetime.datetime.now())
                 else :
                     print("Debe ingresar las coordenadas")
