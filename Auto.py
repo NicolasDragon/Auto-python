@@ -71,5 +71,5 @@ while opc != 3:
             opc2 = int(input("Ingrese una opcion: "))    
     else:
         opc = int(input("Ingrese una opcion: "))
-print("Hasta salido del programa")
+print("Ha salido del programa")
 
