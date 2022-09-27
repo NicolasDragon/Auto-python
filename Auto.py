@@ -24,13 +24,15 @@ while opc != 3:
         while opc2 != 9:
             if opc2 == 1:
                 print("Ingrese las coordenadas de dos puntos para calcular la distancia entre ellos")
-                slat = radians(float(input("Latitud del primer punto: ")))
-                elat = radians(float(input("Latitud del segundo punto: ")))
-                slon = radians(float(input("Longitud del primer punto: ")))
-                elon = radians(float(input("longitud del segundo punto:")))
+                lugar1 = input("¿En que lugar comienza el recorrido?: ")
+                slat = radians(float(input("Latitud del primer lugar: ")))
+                slon = radians(float(input("Longitud del primer lugar: ")))
+                lugar2 = input("¿En donde terminar el recorrido?: ")
+                elat = radians(float(input("Latitud del segundo lugar: ")))
+                elon = radians(float(input("longitud del segundo lugar:")))
                 dist = 6371.01 * acos(sin(slat)*sin(elat) + cos(slat)*cos(elat)*cos(slon - elon))
-                print("La distancia entre los dos puntos es: ", dist, "Km")
-                precio = int(input("valor del kilometro por hora? en pesos chilenos: "))
+                print("La distancia entre: " ,lugar1, "y: " ,lugar2, "es" , dist, "Km")
+                precio = int(input("¿Valor del kilometro por hora? en pesos chilenos: "))
                 pago=dist*precio
                 print("El pago es: ", pago, "pesos")
             elif opc2 == 2:
@@ -59,7 +61,7 @@ while opc != 3:
                     print("El angulo de giro debe estar entre 0 y 360")
             elif opc2 == 7:
                 if dist != 0 and pago !=0:
-                    print("Nombre: ", nombre, "\n Rut: ", rut, "\n Modelo: ", modelo, "\n Patente: ", patente, "\n Distancia Recorrida: ", dist, "\n Velocidad: ", velocidad, "\n Pago: ", pago , "\n El vehiculo ha girado : ", f, "grados")
+                    print("Nombre: ", nombre, "\n Rut: ", rut, "\n Modelo: ", modelo, "\n Patente: ", patente,"\n Comenzo en: " ,lugar1, "\n Termino en: " ,lugar2, "\n Distancia Recorrida: ", dist, "\n Velocidad: ", velocidad, "\n Pago: ", pago , "\n El vehiculo ha girado : ", f, "grados")
                     print(datetime.datetime.now())
                 else :
                     print("Debe ingresar las coordenadas")
